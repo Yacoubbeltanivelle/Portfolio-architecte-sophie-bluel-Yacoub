@@ -1,0 +1,267 @@
+.portfolio__btn-modifier {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio__icon {
+  cursor: pointer;
+  height: 23px;
+  margin: 10px 19px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: auto;
+}
+
+.modal-contenus {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  width: 40%;
+  border-radius: 15px;
+  text-align: center;
+  padding: 34px 50px;
+  display: flex;
+  flex-direction: column;
+  margin: 10% auto;
+  overflow: auto;
+  align-items: center;
+}
+
+.modal-contenus h2 {
+  font-family: inherit;
+  color: #000;
+  font-weight: normal;
+  margin-top: 0px;
+  font-size: 26px;
+}
+
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  align-self: end;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.gallery-modal {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 80px 80px 80px 80px 80px;
+  grid-column-gap: 13px;
+  grid-row-gap: 10px;
+  margin-top: 51px;
+  justify-content: center;
+  text-align: left;
+}
+
+.gallery-modal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-modal figure {
+  position: relative;
+  width: 82px;
+  height: 133px;
+  margin-top: 23px;
+}
+
+.gallery-modal figure i {
+  position: absolute;
+  color: white;
+  background-color: #000;
+  padding: 4px;
+  width: 12px;
+  height: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.gallery-modal figure .fa-trash-can {
+  right: 0;
+  margin: 6px;
+}
+
+.gallery-modal figure .fa-arrows-up-down-left-right {
+  right: 25px;
+  margin: 6px;
+}
+
+.fa-arrows-up-down-left-right::before,
+.fa-arrows::before {
+  font-size: 10px;
+}
+
+.fa-trash-alt:before,
+.fa-trash-can:before {
+  font-size: 10px;
+}
+
+.modal-separateur {
+  width: 75%;
+  border: 1px solid #dddddd;
+  display: block;
+  align-self: center;
+  margin-top: 47px;
+}
+
+.btn-ajouter {
+  padding: 13px 52px;
+  color: white;
+  border-radius: 50px;
+  border: none;
+  background-color: #1d6154;
+  font-family: "Syne";
+  width: fit-content;
+  align-self: center;
+  cursor: pointer;
+  margin-top: 41px;
+}
+
+.modal-contenus a {
+  color: #db6868;
+  margin-top: 39px;
+  cursor: pointer;
+}
+
+.modal__bloc-supprimer {
+  display: none;
+  position: fixed;
+  color: black;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  box-shadow: 11px 12px 0px 0px;
+}
+
+.btn-ajouter--supprimer {
+  background-color: #db6868;
+  cursor: pointer;
+  margin-top: 0;
+}
+
+.modal__bloc-supprimer__btnSupp {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  margin-top: 23px;
+}
+
+#close--supp {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#btn-retour {
+  align-self: start;
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.baniere {
+  background: #e8f1f6;
+  margin-top: 31px;
+  border-radius: 4px;
+  width: 458px;
+  display: flex;
+  flex-direction: column;
+  height: 187px;
+}
+
+.baniere i {
+  font-size: 73px;
+  margin-top: 26px;
+  color: #cbd6dc;
+}
+
+.btn-ajouter--photo {
+  margin-top: 16px;
+  background-color: #cbd6dc;
+  color: #3e708d;
+  padding: 9px 30px;
+}
+
+.baniere p {
+  font-size: 10px;
+  color: #626465;
+  margin-top: 10px;
+}
+
+.baniere--photo {
+display: none;
+overflow: hidden;
+}
+
+.baniere--photo img {
+  height: 100%;
+}
+
+#modal-ajout {
+   display: none;
+}
+
+.modal-ajout__inputs {
+  width: 458px;
+  display: flex;
+  flex-direction: column;
+  text-align: initial;
+}
+
+.modal-ajout__inputs input,
+select {
+  height: 50px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  padding: 0 17px;
+  background-color: white;
+  color: #464646;
+}
+.modal-ajout__inputs label {
+  margin: 2em 0 1em 0;
+}
+.modal-ajout__inputs textarea {
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+.btn-ajouter--valider {
+background-color: #a7a7a7;
+padding: 13px 102px;
+}
+
+#imageUpload {
+  display: none;
+}
+
+#erreur {
+  display: none;
+  margin-top: 7%;
+  color: red;
+}

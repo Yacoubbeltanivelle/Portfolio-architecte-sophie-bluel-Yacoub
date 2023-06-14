@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sophie Bluel - Architecte d'intérieur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+        rel="stylesheet">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/acceuil.css">
+    <script src="./assets/index.js" defer></script>
+    <script src="./assets/acceuil.js" defer></script>
+    <script src="https://kit.fontawesome.com/96c58dc3c8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html/#portfolio">projets</a></li>
+                <li><a href="index.html/#contact">contact</a></li>
+                <li><a id="logout" href="#">logout</a></li>
+                <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <!-- Modal -->
+        <div id="modal-modif" class="modal">
+
+            <div class="modal-contenus">
+                <!-- Modal de suppression -->
+                <div class="modal__bloc-supprimer">
+                    <p>Voulez vous vraiment supprimer?</p>
+                    <div class="modal__bloc-supprimer__btnSupp">
+                        <button class="btn-ajouter btn-ajouter--supprimer">Supprimer</button>
+
+                        <!-- Bouton Close pour la modale de suppression -->
+                        <span id="close--supp">Non</i></span>
+                    </div>
+
+                </div>
+                <!-- Bouton Close pour fermer la modale -->
+                <span class="close"><i class="fa-solid fa-xmark"></i></span>
+                <h2>Galerie photo</h2>
+
+                <div class="gallery-modal">
+
+                </div>
+                <span class="modal-separateur"></span>
+
+                <button class="btn-ajouter" onclick="ajouterPhoto()"> Ajouter une photo </button>
+                <a href="#"> Supprimer la galerie</a>
+            </div>
+
+            <!-- Modal d'ajouts -->
+            <form id="modal-ajout" class="modal-contenus">
+                <span id="btn-retour" onclick="btnRetour()"><i class="fa-solid fa-arrow-left-long"></i></span>
+
+                <!-- Bouton Close pour fermer la modale -->
+                <span class="close"><i class="fa-solid fa-xmark"></i></span>
+
+                <h2>Ajout photo</h2>
+
+                <div class="baniere baniere--photo">
+                    <img id="photo-baniere" src="" alt="">
+                </div>
+
+                <div id="banniereVide" class="baniere">
+                    <i class="fa-regular fa-image"></i>
+                    <input id="imageUpload" name="photo" type="file" accept=".png, .jpg, .jpeg"
+                        onchange="changephoto(event)">
+                    <label for="imageUpload" class="btn-ajouter btn-ajouter--photo"> + Ajouter photo </label>
+                    <p>jpg, png : 4mo max</p>
+                </div>
+
+
+                <div class="modal-ajout__inputs">
+                    <label for="titre" >Titre</label>
+                    <input type="text" name="titre" id="titre">
+                    <label for="categorie">Catégorie</label>
+                    <select name="categorie" id="categorie">
+
+                        <option value=""></option>
+                        <option value="1">Objets</option>
+                        <option value="2">Appartements</option>
+                        <option value="3">Hotels & restaurants</option>
+                    </select>
+                    <p id="erreur"></p>
+
+                </div>
+                <span class="modal-separateur"></span>
+                <input type="submit" value="Valider" id="valider" class="btn-ajouter btn-ajouter--valider">
+
+            </form>
+
+
+        </div>
+
+
+
+
+
+        <section id="introduction">
+            <figure>
+                <img src="./assets/images/sophie-bluel.png" alt="">
+                <div class="btn-modifier"><i class="fa-regular fa-pen-to-square"></i> modifier </div>
+            </figure>
+            <article>
+                <div><i class="fa-regular fa-pen-to-square"></i> modifier </div>
+                <h2>Designer d'espace</h2>
+                <p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
+                    finale du chantier.</p>
+                <p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
+                    couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du
+                    chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+                <p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG,
+                    décorateur(trice)</p>
+            </article>
+        </section>
+        <section id="portfolio">
+            <div class="portfolio__btn-modifier">
+                <h2>Mes Projets</h2>
+
+                <!-- Bouton pour ouvrir la modale -->
+                <div id="btn-modal" class="portfolio__icon"><i class="fa-regular fa-pen-to-square"></i> modifier </div>
+            </div>
+
+            <div class="filtres">
+                <ul>
+                    <li><button id="btn-tous">Tous</button></li>
+                    <li><button id="btn-objets">Objets</button></li>
+                    <li><button id="btn-appartements">Appartements</button></li>
+                    <li><button id="btn-h&r">Hôtels & restaurants</button></li>
+                </ul>
+
+            </div>
+            <div class="gallery">
+
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Vous avez un projet ? Discutons-en !</p>
+            <form action="#" method="post">
+                <label for="name">Nom</label>
+                <input type="text" name="name" id="name">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                <input type="submit" value="Envoyer">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li>Mentions Légales</li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
